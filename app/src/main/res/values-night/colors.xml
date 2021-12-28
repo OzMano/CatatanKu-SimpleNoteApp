@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008000</color>
+    <color name="colorPrimaryDark">#2D313D</color>
+    <color name="colorAccent">#25D366</color>
+
+    <color name="mainText">#ffffff</color>
+    <color name="textAlt">#9E9E9E</color>
+    <color name="mainBackground">#2D313D</color>
+
+
+    <color name="bright_pink">#FF007F</color>
+    <color name="orange">#FF7F00</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="spring_green">#00FF7F</color>
+    <color name="red">#FF0000</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="azure">#007FFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="violet">#7F00FF</color>
+    <color name="magenta">#FF00FF</color>
+    <color name="green">#00FF00</color>
+
+    <color name="button_green">#008000</color>
+    <color name="button_text_color">#FFFFFF</color>
+    <color name="button_red">#7C0202</color>
+
+    <color name="dark_red">#7C0202</color>
+
+
+
+    <color name="one">#FFEBEE</color>
+    <color name="two">#FF8A80</color>
+    <color name="three">#EA80FC</color>
+    <color name="four">#B3E5FC</color>
+    <color name="five">#84FFFF</color>
+    <color name="six">#FFF59D</color>
+    <color name="seven">#97EC97</color>
+    <color name="eight">#7E7ECD</color>
+</resources>

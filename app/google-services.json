@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "301149751225",
+    "firebase_url": "https://catatanku-a74f5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "catatanku-a74f5",
+    "storage_bucket": "catatanku-a74f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301149751225:android:84c0b30eb6c94ca01b5868",
+        "android_client_info": {
+          "package_name": "id.julham.catatanku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301149751225-9u2j8c8vlmsidd7icuemne2mfjuoig1g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.julham.catatanku",
+            "certificate_hash": "068bd29e2bbf2338d56f3791c2e10f3d0c5328e5"
+          }
+        },
+        {
+          "client_id": "301149751225-qitjupv76ub7o056e1k6n7pt5ebl3uju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBBmthY8gGoHEfX2YuxypSPsYqSUwvp5M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301149751225-qitjupv76ub7o056e1k6n7pt5ebl3uju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

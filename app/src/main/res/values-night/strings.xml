@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">CatatanKu</string>
+    <string name="by">By</string>
+    <string name="log_in_prompt">Log in to continue</string>
+    <string name="all_notes">All Notes</string>
+    <string name="add_notes">Add Notes</string>
+    <string name="settings">Settings</string>
+    <string name="hi">Hi,</string>
+    <string name="backup_and_sync">Backup and Sync</string>
+    <string name="log_out">Log out</string>
+    <string name="mode_switch_text">Dark Mode</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about">About</string>
+    <string name="contact">Contact</string>
+    <string name="log_out_prompt">Sure to Log out?</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="license">Designed and Coded by Julham A P\n\nLicensed under the Apache License, Version 2.0 (the "License");
+        you may not use this file except in compliance with the License.
+        You may obtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\n
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an \"AS IS\" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.</string>
+    <string name="no_notes">Nothing\'s here.</string>
+    <string name="delete_message">Sure to delete?</string>
+    <string name="delete">Delete</string>
+    <string name="written_at">Written on</string>
+    <string name="save">Save</string>
+    <string name="notes">Write your notes</string>
+    <string name="notes_descriptions">Write your note\'s description</string>
+    <string name="color">Color:</string>
+    <string name="saved">Saved</string>
+    <string name="saving">Saving..</string>
+
+    <string name="exit">Exit</string>
+    <string name="exit_prompt">Sure to Exit?</string>
+
+    <array name="mixed_colors">
+        <item>@color/blue</item>
+        <item>@color/bright_pink</item>
+        <item>@color/orange</item>
+        <item>@color/yellow</item>
+        <item>@color/green</item>
+        <item>@color/red</item>
+        <item>@color/spring_green</item>
+        <item>@color/cyan</item>
+        <item>@color/azure</item>
+        <item>@color/violet</item>
+        <item>@color/magenta</item>
+    </array>
+</resources>
