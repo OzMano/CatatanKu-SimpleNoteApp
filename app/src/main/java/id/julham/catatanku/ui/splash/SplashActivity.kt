@@ -37,14 +37,7 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>() {
 
         //setting up anim
         slideDownAnim = AnimationUtils.loadAnimation(applicationContext, R.anim.reveal_animation)
-
-        binding.appNameFull.animation = slideDownAnim
-
-        if (auth.currentUser != null) {
-            val userName = getString(R.string.by) + "\n${auth.currentUser?.displayName}"
-            binding.userName.text = userName
-            binding.userName.animation = slideDownAnim
-        }
+        binding.splashLogo.animation = slideDownAnim
 
         Timer("decision", false).schedule(1000) {
             if (auth.currentUser != null) {
@@ -75,7 +68,7 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>() {
      * then set the dark mode status based on shared preferences value
      */
     private fun setupAppTheme(){
-        val appSettingPrefs = getSharedPreferences("AppThemeModelPrefs", 0)
+        val appSettingPrefs = getSharedPreferences("AppThemeModePrefs", 0)
         val isNightModeOn = appSettingPrefs.getBoolean("DarkMode", false)
 
         if (!isNightModeOn) {

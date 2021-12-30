@@ -6,9 +6,8 @@ import androidx.appcompat.app.AppCompatDelegate
 
 class AppThemeMode(private val isDarkModeOn: Boolean, context: Context) {
 
-    private val appSettingPrefs: SharedPreferences =
-        context.getSharedPreferences("AppThemeModePrefs", 0)
-    private val sharedPrefsEdit: SharedPreferences.Editor = appSettingPrefs.edit()
+    private val appSettingPrefs = context.getSharedPreferences("AppThemeModePrefs", 0)
+    private val sharedPrefsEdit = appSettingPrefs.edit()
 
     fun setTheme() {
         if (isDarkModeOn) {

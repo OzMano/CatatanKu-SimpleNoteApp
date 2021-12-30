@@ -102,13 +102,7 @@ class SettingsFragment: BaseFragment<FragmentSettingsBinding>() {
         //setting up the mode switch
         binding.modeSwitch.isChecked = isDarkModeOn
         binding.modeSwitch.setOnCheckedChangeListener { _: CompoundButton, isNightModeOnFlag: Boolean ->
-            if (isNightModeOnFlag) {
-                val appTheme = AppThemeMode(true, activity!!)
-                appTheme.setTheme()
-            } else {
-                val appTheme = AppThemeMode(false, activity!!)
-                appTheme.setTheme()
-            }
+            AppThemeMode(isNightModeOnFlag, activity!!).setTheme()
         }
 
         binding.backupBtn.setOnClickListener {
