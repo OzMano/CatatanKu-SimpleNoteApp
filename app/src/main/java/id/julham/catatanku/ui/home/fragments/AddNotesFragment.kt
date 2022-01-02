@@ -57,17 +57,7 @@ class AddNotesFragment : BaseFragment<FragmentAddNotesBinding>(), View.OnClickLi
         cardColor = "#" + Integer.toHexString(ContextCompat.getColor(activity!!, colorId!!))
         binding.notesContainerCard.setCardBackgroundColor(Color.parseColor(cardColor))
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            binding.saveBtnContainer.background.colorFilter = BlendModeColorFilter(
-                Color.parseColor(cardColor), BlendMode.SRC_ATOP
-            )
-        } else {
-            binding.saveBtnContainer.background.setColorFilter(
-                Color.parseColor(cardColor), PorterDuff.Mode.SRC_ATOP
-            )
-        }
-
-        binding.saveBtnContainer.setOnClickListener {  saveNote() }
+        binding.btnSave.setOnClickListener {  saveNote() }
     }
 
     private fun randomColor(): ImageButton {
@@ -96,8 +86,8 @@ class AddNotesFragment : BaseFragment<FragmentAddNotesBinding>(), View.OnClickLi
         if (noteString.isBlank() && noteDescriptionString.isBlank())
             return
 
-        binding.saveBtnContainer.isEnabled = false
-        binding.saveState.text = getString(R.string.saving)
+        binding.btnSave.isEnabled = false
+        binding.btnSave.text = getString(R.string.saving)
 
         val roomId = (System.currentTimeMillis() / 1000).toInt()
 
@@ -117,11 +107,11 @@ class AddNotesFragment : BaseFragment<FragmentAddNotesBinding>(), View.OnClickLi
                     Log.d(TAG, " Firestore error ${it.message}")
                 }
 
-            binding.saveState.text = getString(R.string.saved)
+            binding.btnSave.text = getString(R.string.saved)
 
             Handler().postDelayed({
-                binding.saveBtnContainer.isEnabled = true
-                binding.saveState.text = getString(R.string.save)
+                binding.btnSave.isEnabled = true
+                binding.btnSave.text = getString(R.string.save)
                 binding.notes.text.clear()
                 binding.notesDescription.text.clear()
                 hideKeyboard()
@@ -143,14 +133,5 @@ class AddNotesFragment : BaseFragment<FragmentAddNotesBinding>(), View.OnClickLi
 
         cardColor = "#" + Integer.toHexString(ContextCompat.getColor(activity!!, colorId!!))
         binding.notesContainerCard.setCardBackgroundColor(Color.parseColor(cardColor))
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            binding.saveBtnContainer.background.colorFilter =
-                BlendModeColorFilter(Color.parseColor(cardColor), BlendMode.SRC_ATOP)
-        } else {
-            binding.saveBtnContainer.background.setColorFilter(
-                Color.parseColor(cardColor), PorterDuff.Mode.SRC_ATOP
-            )
-        }
     }
 }

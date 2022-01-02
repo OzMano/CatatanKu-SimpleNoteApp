@@ -36,6 +36,7 @@
             android:layout_below="@id/notes_item"
             android:layout_marginTop="5sp"
             android:fontFamily="@font/itim"
+            android:textStyle="italic"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="#000000" />
 
