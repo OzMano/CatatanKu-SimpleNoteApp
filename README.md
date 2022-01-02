@@ -22,7 +22,7 @@ Made in Kotlin
 <th align="center">Edit Notes</th>
 <th align="center">Delete Notes</th>
 <th align="center">Google Sign In</th>
-<th align="center">Firebase Realtime Database</th>
+<th align="center">Firestore Database</th>
 </tr>
 </thead>
 <tbody>
