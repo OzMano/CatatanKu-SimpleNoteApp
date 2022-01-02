@@ -36,4 +36,7 @@
     <color name="six">#FFF59D</color>
     <color name="seven">#97EC97</color>
     <color name="eight">#7E7ECD</color>
+
+    <color name="bnve_active">#5aa5da</color>
+    <color name="bnve_inactive">#A0A0A0</color>
 </resources>

@@ -8,21 +8,6 @@
         android:layout_height="match_parent"
         android:background="@color/mainBackground">
 
-<!--        <ImageButton-->
-<!--            android:id="@+id/btn_save"-->
-<!--            style="@style/Widget.AppCompat.Button.Borderless"-->
-<!--            android:layout_width="50dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:elevation="5dp"-->
-<!--            android:src="@drawable/ic_baseline_check_circle_outline_24"-->
-<!--            android:tint="#008000"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/notes_container_card"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/notes_container_card"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_marginEnd="8dp"/>-->
-
-
-
         <androidx.cardview.widget.CardView
             android:id="@+id/notes_container_card"
             android:layout_width="match_parent"
@@ -30,7 +15,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="8dp"
             app:cardCornerRadius="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,12 +31,12 @@
                     android:id="@+id/save_btn_container"
                     android:layout_width="120sp"
                     android:layout_height="32sp"
+                    android:layout_gravity="end"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/bottom_navbar_shape"
                     android:elevation="5dp"
                     android:gravity="center"
-                    android:layout_gravity="end"
                     android:orientation="horizontal"
                     android:visibility="visible">
 
@@ -73,6 +58,7 @@
                     android:id="@+id/notes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:background="@null"
                     android:fontFamily="@font/itim"
                     android:gravity="center"
@@ -81,12 +67,11 @@
                     android:inputType="text"
                     android:maxLength="200"
                     android:padding="8dp"
-                    android:layout_marginTop="8dp"
+                    android:singleLine="true"
                     android:textAlignment="center"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:singleLine="true"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +81,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
-                    android:background="@drawable/dashed_line"/>
+                    android:background="@drawable/dashed_line" />
 
                 <EditText
                     android:id="@+id/notes_description"

@@ -59,55 +59,22 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             }
 
             override fun onPageSelected(position: Int) {
-                changingTabs(position)
+                binding.bnMain.menu.getItem(position).isChecked = true
             }
         })
 
         binding.homePager.currentItem = 1
-        binding.addNotes.setImageResource(R.drawable.add_colored)
 
-        binding.allNotes.setOnClickListener {
-            binding.homePager.currentItem = 0
-            binding.allNotes.setImageResource(R.drawable.notes_colored)
-            binding.addNotes.setImageResource(R.drawable.add_black)
-            binding.settings.setImageResource(R.drawable.settings_black)
-        }
+        binding.bnMain.setOnItemSelectedListener { item ->
+            hideKeyboard()
 
-        binding.addNotes.setOnClickListener {
-            binding.homePager.currentItem = 1
-            binding.allNotes.setImageResource(R.drawable.notes_black)
-            binding.addNotes.setImageResource(R.drawable.add_colored)
-            binding.settings.setImageResource(R.drawable.settings_black)
-        }
-
-        binding.settings.setOnClickListener {
-            binding.homePager.currentItem = 2
-            binding.allNotes.setImageResource(R.drawable.notes_black)
-            binding.addNotes.setImageResource(R.drawable.add_black)
-            binding.settings.setImageResource(R.drawable.settings_colored)
-        }
-    }
-
-    private fun changingTabs(position: Int) {
-        binding.homePager.currentItem = position
-        hideKeyboard()
-
-        when (position) {
-            0 -> {
-                binding.allNotes.setImageResource(R.drawable.notes_colored)
-                binding.addNotes.setImageResource(R.drawable.add_black)
-                binding.settings.setImageResource(R.drawable.settings_black)
+            when (item.itemId) {
+                R.id.all_notes -> binding.homePager.currentItem = 0
+                R.id.add_notes -> binding.homePager.currentItem = 1
+                R.id.settings -> binding.homePager.currentItem = 2
             }
-            1 -> {
-                binding.allNotes.setImageResource(R.drawable.notes_black)
-                binding.addNotes.setImageResource(R.drawable.add_colored)
-                binding.settings.setImageResource(R.drawable.settings_black)
-            }
-            2 -> {
-                binding.allNotes.setImageResource(R.drawable.notes_black)
-                binding.addNotes.setImageResource(R.drawable.add_black)
-                binding.settings.setImageResource(R.drawable.settings_colored)
-            }
+
+            true
         }
     }
 

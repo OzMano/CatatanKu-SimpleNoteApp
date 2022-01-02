@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/button_red"
             android:text="@string/log_out"
             android:textAllCaps="false"

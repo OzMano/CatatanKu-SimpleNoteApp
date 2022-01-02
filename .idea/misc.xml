@@ -3,17 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/drawable/add_black.xml" value="0.27487179487179486" />
         <entry key="app/src/main/res/drawable/add_colored.xml" value="0.27487179487179486" />
         <entry key="app/src/main/res/drawable/bottom_navbar_shape.xml" value="0.27487179487179486" />
         <entry key="app/src/main/res/drawable/dashed_line.xml" value="0.26944444444444443" />
         <entry key="app/src/main/res/drawable/ic_baseline_check_circle_outline_24.xml" value="0.26944444444444443" />
         <entry key="app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.27487179487179486" />
+        <entry key="app/src/main/res/drawable/ic_catatanku_logo_24.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/drawable/notes_black.xml" value="0.27487179487179486" />
         <entry key="app/src/main/res/drawable/notes_colored.xml" value="0.27487179487179486" />
         <entry key="app/src/main/res/drawable/round_shape.xml" value="0.27487179487179486" />
         <entry key="app/src/main/res/drawable/settings_black.xml" value="0.27487179487179486" />
         <entry key="app/src/main/res/drawable/settings_colored.xml" value="0.27487179487179486" />
+        <entry key="app/src/main/res/drawable/state_bnve.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/about_dialog.xml" value="0.22871376811594202" />
         <entry key="app/src/main/res/layout/activity_edit_notes.xml" value="0.22871376811594202" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.23233695652173914" />
@@ -25,6 +28,7 @@
         <entry key="app/src/main/res/layout/logout_dialog.xml" value="0.22871376811594202" />
         <entry key="app/src/main/res/layout/notes_item.xml" value="0.22871376811594202" />
         <entry key="app/src/main/res/layout/privacy_policy_dialog.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/menu/bottomnavigation_menu.xml" value="0.2630208333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15260416666666668" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15260416666666668" />
       </map>
