@@ -14,7 +14,7 @@ Made in Kotlin
 - Push Changes to Firebase
 - Dark Mode
 
-<h4>Screenshots</h4>
+## Screenshots
 <table>
 <thead>
 <tr>
@@ -27,9 +27,9 @@ Made in Kotlin
 </thead>
 <tbody>
 <tr>
-<td> <img src="screenshot/Screenshot_20220103-010949_CatatanKu.jpg" width="150" ></td>
-<td> <img src="screenshot/Screenshot_20220103-011022_CatatanKu.jpg" width="150" ></td>
-<td> <img src="screenshot/Screenshot_20220103-011022_CatatanKu.jpg" width="150" ></td>
+<td> <img src="screenshot/add-note.gif" width="150" ></td>
+<td> <img src="screenshot/edit-note.gif" width="150" ></td>
+<td> <img src="screenshot/delete-note.gif" width="150" ></td>
     <td> <img src="screenshot/Screenshot_20220103-012433_CatatanKu.jpg" width="150"</td>
         <td> <img src="app/src/main/res/drawable/Screenshot 2020-02-24 at 2.57.09 PM.png" width="150" ></td>
 
