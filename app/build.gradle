@@ -24,10 +24,33 @@ android {
         enabledForTests = true
     }
 
+    signingConfigs {
+        release {
+            storeFile file('../catatanku')
+            storePassword 'catatanku1234'
+            keyAlias = 'catatanku'
+            keyPassword 'catatanku1234'
+        }
+        debug {
+            storeFile file('../catatanku')
+            storePassword 'catatanku1234'
+            keyAlias = 'catatanku'
+            keyPassword 'catatanku1234'
+        }
+    }
+
     buildTypes {
         release {
+            debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
 }

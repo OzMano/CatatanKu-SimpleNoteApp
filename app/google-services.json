@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "301149751225-rhib3k2f9cb8u4v4smj5mk8b0nffhm1o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.julham.catatanku",
+            "certificate_hash": "73dee2c8864b7e35211fbf49e517278a911e0781"
+          }
+        },
+        {
           "client_id": "301149751225-qitjupv76ub7o056e1k6n7pt5ebl3uju.apps.googleusercontent.com",
           "client_type": 3
         }
