@@ -41,12 +41,13 @@ class EditNotesActivity : BaseActivity<ActivityEditNotesBinding>() {
         colorValue = intent.getStringExtra("color")
         colorValuePublic = colorValue
 
-        binding.note.setText(noteValue)
+        binding.notes.setText(noteValue)
         if (!noteDescriptionValue.equals("blank"))
-            binding.noteDescription.setText(noteDescriptionValue)
+            binding.notesDescription.setText(noteDescriptionValue)
         binding.notesContainerCard.setCardBackgroundColor(Color.parseColor(colorValue))
 
         binding.deleteNote.setOnClickListener { deleteNote() }
+        binding.btnBack.setOnClickListener { onBackPressed() }
     }
 
     private fun deleteNote() {
@@ -100,8 +101,8 @@ class EditNotesActivity : BaseActivity<ActivityEditNotesBinding>() {
     }
 
     private fun saveNote() {
-        val noteValue = binding.note.text.toString().trim()
-        val noteDescriptionValue = binding.noteDescription.text.toString().trim()
+        val noteValue = binding.notes.text.toString().trim()
+        val noteDescriptionValue = binding.notesDescription.text.toString().trim()
         val color = colorValue.toString()
 
         if (noteValue.isBlank() && noteDescriptionValue.isBlank()) {
