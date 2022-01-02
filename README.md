@@ -1,5 +1,7 @@
 # 🗒 CatatanKu
 
+[![name](https://img.shields.io/badge/DOWNLOAD-APK-green)](https://google.com)
+
 CatatanKu helps to create your notes. You can edit and delete notes too. All Changes in database is pushed to Firebase Realtime Database.
 App respects its Mvvm architecture. Android Architecture Components Part of Android Jetpack.
 Android architecture components are a collection of libraries that help you design robust, testable, and maintainable apps.
