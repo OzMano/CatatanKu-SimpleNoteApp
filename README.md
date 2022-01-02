@@ -14,6 +14,29 @@ Made in Kotlin
 - Push Changes to Firebase
 - Dark Mode
 
+<h4>Screenshots</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Add Notes</th>
+<th align="center">Edit Notes</th>
+<th align="center">Delete Notes</th>
+    <th align="center">Google Sign In</th>
+    <th align="center">Firebase Realtime Database</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> <img src="screenshot/Screenshot_20220103-010939_CatatanKu.jpg" width="150" ></td>
+<td> <img src="app/src/main/res/drawable/edit2.gif" width="150" ></td>
+<td> <img src="app/src/main/res/drawable/delete.gif" width="150" ></td>
+    <td> <img src="app/src/main/res/drawable/Screenshot_2020-02-24-14-09-33-108_com.languagexx.simplenotes.jpg" width="150"</td>
+        <td> <img src="app/src/main/res/drawable/Screenshot 2020-02-24 at 2.57.09 PM.png" width="150" ></td>
+
+</tr>
+</tbody>
+</table>
+
 ## Architecture
 MVVM is one of the architectural patterns which enhances separation of concerns, it allows separating the user interface logic from the business (or the back-end) logic. Its target (with other MVC patterns goal) is to achieve the following principle “Keeping UI code simple and free of app logic in order to make it easier to manage”.
 
