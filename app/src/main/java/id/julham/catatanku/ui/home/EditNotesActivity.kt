@@ -96,9 +96,7 @@ class EditNotesActivity : BaseActivity<ActivityEditNotesBinding>() {
         binding.notesContainerCard.setCardBackgroundColor(Color.parseColor(colorValue))
     }
 
-    override fun onBackPressed() {
-        saveNote()
-    }
+    override fun onBackPressed() { saveNote() }
 
     private fun saveNote() {
         val noteValue = binding.notes.text.toString().trim()
