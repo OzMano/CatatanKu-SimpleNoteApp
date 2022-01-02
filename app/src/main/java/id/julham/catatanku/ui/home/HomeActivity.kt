@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.annotation.LayoutRes
@@ -19,15 +18,12 @@ import id.julham.catatanku.ui.home.adapters.HomePagerAdapter
 import id.julham.catatanku.ui.home.viewodel.NotesViewModel
 import id.julham.catatanku.utils.hideKeyboard
 
-class HomeActivity: BaseActivity<ActivityHomeBinding>() {
+class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
     @LayoutRes
     override fun getLayoutResId() = R.layout.activity_home
 
-    private val TAG = "HomeActivityDebug"
     private lateinit var homePagerAdapter: HomePagerAdapter
-
-    private var doubleBackToExit = false
 
     companion object {
         lateinit var viewModel: NotesViewModel
@@ -36,15 +32,15 @@ class HomeActivity: BaseActivity<ActivityHomeBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, " onCreate HomeActivity")
 
         //viewModel
         viewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
 
         //firebase firestore
         firestoreDb = FirebaseFirestore.getInstance()
-        val firebaseSettings =
-            FirebaseFirestoreSettings.Builder().setPersistenceEnabled(true).build()
+        val firebaseSettings = FirebaseFirestoreSettings.Builder()
+            .setPersistenceEnabled(true)
+            .build()
         firestoreDb.firestoreSettings = firebaseSettings
 
         //setting up HomePager
@@ -53,8 +49,7 @@ class HomeActivity: BaseActivity<ActivityHomeBinding>() {
         binding.homePager.offscreenPageLimit = 3
 
         binding.homePager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-            override fun onPageScrollStateChanged(state: Int) {
-            }
+            override fun onPageScrollStateChanged(state: Int) {}
 
             override fun onPageScrolled(
                 position: Int,
@@ -66,13 +61,10 @@ class HomeActivity: BaseActivity<ActivityHomeBinding>() {
             override fun onPageSelected(position: Int) {
                 changingTabs(position)
             }
-
         })
 
         binding.homePager.currentItem = 1
         binding.addNotes.setImageResource(R.drawable.add_colored)
-
-
 
         binding.allNotes.setOnClickListener {
             binding.homePager.currentItem = 0
@@ -97,26 +89,25 @@ class HomeActivity: BaseActivity<ActivityHomeBinding>() {
     }
 
     private fun changingTabs(position: Int) {
-        if (position == 0) {
-            binding.homePager.currentItem = 0
-            binding.allNotes.setImageResource(R.drawable.notes_colored)
-            binding.addNotes.setImageResource(R.drawable.add_black)
-            binding.settings.setImageResource(R.drawable.settings_black)
-            hideKeyboard()
-        }
-        if (position == 1) {
-            binding.homePager.currentItem = 1
-            binding.allNotes.setImageResource(R.drawable.notes_black)
-            binding.addNotes.setImageResource(R.drawable.add_colored)
-            binding.settings.setImageResource(R.drawable.settings_black)
-            hideKeyboard()
-        }
-        if (position == 2) {
-            binding.homePager.currentItem = 2
-            binding.allNotes.setImageResource(R.drawable.notes_black)
-            binding.addNotes.setImageResource(R.drawable.add_black)
-            binding.settings.setImageResource(R.drawable.settings_colored)
-            hideKeyboard()
+        binding.homePager.currentItem = position
+        hideKeyboard()
+
+        when (position) {
+            0 -> {
+                binding.allNotes.setImageResource(R.drawable.notes_colored)
+                binding.addNotes.setImageResource(R.drawable.add_black)
+                binding.settings.setImageResource(R.drawable.settings_black)
+            }
+            1 -> {
+                binding.allNotes.setImageResource(R.drawable.notes_black)
+                binding.addNotes.setImageResource(R.drawable.add_colored)
+                binding.settings.setImageResource(R.drawable.settings_black)
+            }
+            2 -> {
+                binding.allNotes.setImageResource(R.drawable.notes_black)
+                binding.addNotes.setImageResource(R.drawable.add_black)
+                binding.settings.setImageResource(R.drawable.settings_colored)
+            }
         }
     }
 
@@ -126,18 +117,19 @@ class HomeActivity: BaseActivity<ActivityHomeBinding>() {
         dialog.setContentView(R.layout.logout_dialog)
         dialog.setCancelable(true)
         dialog.show()
+
         val prompt = dialog.findViewById<TextView>(R.id.log_out_prompt)
         val exit = dialog.findViewById<Button>(R.id.log_out_confirm_btn)
         val cancel = dialog.findViewById<Button>(R.id.cancel_btn)
+
         prompt.text = getString(R.string.exit_prompt)
         exit.text = getString(R.string.exit)
+
         exit.setOnClickListener {
             dialog.dismiss()
             super.onBackPressed()
         }
-        cancel.setOnClickListener {
-            dialog.dismiss()
-        }
 
+        cancel.setOnClickListener { dialog.dismiss() }
     }
 }

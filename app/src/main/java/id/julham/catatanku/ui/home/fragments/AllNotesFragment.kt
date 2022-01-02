@@ -97,26 +97,30 @@ class AllNotesFragment: BaseFragment<FragmentAllNotesBinding>(), AllNotesAdapter
                 val notes = allNotes[position]
                 val id = notes.id
 
-
                 val dialog = Dialog(activity!!)
                 dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 dialog.setContentView(R.layout.logout_dialog)
                 dialog.setCancelable(true)
                 dialog.show()
+
                 val deleteConfirm = dialog.findViewById<Button>(R.id.log_out_confirm_btn)
                 val cancel = dialog.findViewById<Button>(R.id.cancel_btn)
                 val message = dialog.findViewById<TextView>(R.id.log_out_prompt)
+
                 message.text = getString(R.string.delete_message)
                 deleteConfirm.text = getString(R.string.delete)
+
                 deleteConfirm.setOnClickListener {
                     HomeActivity.viewModel.delete(allNotes[position])
-                    collectionReference.document("$id").delete().addOnSuccessListener {
+                    collectionReference.document("$id").delete().addOnSuccessListener { result: Any? ->
                         Log.d(TAG, " delete success")
                     }.addOnFailureListener {
                         Log.d(TAG, " delete failure")
                     }
+
                     dialog.dismiss()
                 }
+
                 cancel.setOnClickListener {
                     dialog.dismiss()
                     allNotesAdapter.notifyItemChanged(viewHolder.adapterPosition)

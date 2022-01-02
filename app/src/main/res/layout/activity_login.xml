@@ -11,14 +11,11 @@
         android:background="@color/mainBackground"
         tools:context=".ui.login.LoginActivity">
 
-        <TextView
-            android:id="@+id/heading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/itim"
-            android:text="@string/app_name"
-            android:textColor="@color/mainText"
-            android:textSize="35sp"
+        <ImageView
+            android:id="@+id/login_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_catatanku_logo_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,11 +27,11 @@
             style="@style/GoogleSignInButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:text="@string/log_in_prompt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/heading" />
+            app:layout_constraintTop_toBottomOf="@+id/login_logo" />
 
 
         <fr.castorflex.android.circularprogressbar.CircularProgressBar
@@ -42,12 +39,12 @@
             android:layout_width="30sp"
             android:layout_height="30sp"
             android:layout_gravity="center"
-            android:layout_marginTop="29dp"
+            android:layout_marginTop="16dp"
             android:indeterminate="true"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/heading" />
+            app:layout_constraintTop_toBottomOf="@+id/login_logo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

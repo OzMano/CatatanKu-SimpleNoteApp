@@ -2,7 +2,6 @@ package id.julham.catatanku.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.annotation.LayoutRes
@@ -21,7 +20,6 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>() {
     @LayoutRes
     override fun getLayoutResId() = R.layout.activity_splash
 
-    private val TAG = "SplashScreenDebug"
     private lateinit var slideDownAnim: Animation
 
     companion object {
@@ -31,7 +29,6 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setupAppTheme()
         super.onCreate(savedInstanceState)
-        Log.d(TAG, " onCreate SplashActivityDebug")
 
         auth = FirebaseAuth.getInstance()
 

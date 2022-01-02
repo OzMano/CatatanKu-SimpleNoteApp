@@ -2,35 +2,32 @@ package id.julham.catatanku.ui.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import androidx.annotation.LayoutRes
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.GoogleAuthProvider
 import id.julham.catatanku.R
 import id.julham.catatanku.base.BaseActivity
 import id.julham.catatanku.databinding.ActivityLoginBinding
 import id.julham.catatanku.ui.home.HomeActivity
 import id.julham.catatanku.ui.splash.SplashActivity
+import id.julham.catatanku.utils.hide
+import id.julham.catatanku.utils.show
+import id.julham.catatanku.utils.snackbar
 
-class LoginActivity: BaseActivity<ActivityLoginBinding>() {
+class LoginActivity : BaseActivity<ActivityLoginBinding>() {
 
     @LayoutRes
     override fun getLayoutResId() = R.layout.activity_login
 
-    private val TAG = "LoginActivityDebug"
-
     private val RC_SIGN_IN = 1
-    lateinit var mGoogleSignInClient: GoogleSignInClient
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "onCreate LogInActivity")
 
         //GoogleSignInOptions
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -44,9 +41,9 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>() {
         binding.logIn.setOnClickListener { signIn() }
     }
 
-    private fun signIn(){
-        binding.progressBar.visibility = View.VISIBLE
-        binding.logIn.visibility = View.GONE
+    private fun signIn() {
+        binding.progressBar.show()
+        binding.logIn.hide()
 
         val signInIntent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
@@ -57,37 +54,29 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>() {
 
         //result returned from launching the Intent from mGoogleSignInClient.signInIntent
         if (requestCode == RC_SIGN_IN) {
-
             //GoogleSignIn Task
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
                 //Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)
+
                 //authenticating with firebase
                 firebaseAuthWithGoogle(account!!)
             } catch (e: ApiException) {
-                Snackbar.make(binding.root,
-                    "Something's wrong $e",
-                    Snackbar.LENGTH_SHORT
-                ).show()
-                binding.progressBar.visibility = View.GONE
-                binding.logIn.visibility = View.VISIBLE
+                binding.root.snackbar("Something's wrong $e")
+                binding.progressBar.hide()
+                binding.logIn.show()
             }
         }
     }
 
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
-        Log.d(TAG, " firebaseAuthWithGoogle:" + acct.id!!)
-
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
 
         //sign in using Firebase
         SplashActivity.auth.signInWithCredential(credential)
-            .addOnCompleteListener(
-                this
-            ) { task ->
+            .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Log.d(TAG, " signInWithCredential:success")
                     Intent(this, HomeActivity::class.java).also {
                         it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(it)
@@ -97,13 +86,9 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>() {
                         )
                     }
                 } else {
-                    Log.w(TAG, " signInWithCredential:failure", task.exception)
-                    Snackbar.make(binding.root,
-                        "Authentication failed ${task.exception.toString()}",
-                        Snackbar.LENGTH_SHORT
-                    ).show()
-                    binding.progressBar.visibility = View.GONE
-                    binding.logIn.visibility = View.VISIBLE
+                    binding.root.snackbar("Authentication failed ${task.exception.toString()}")
+                    binding.progressBar.hide()
+                    binding.logIn.show()
                 }
             }
     }

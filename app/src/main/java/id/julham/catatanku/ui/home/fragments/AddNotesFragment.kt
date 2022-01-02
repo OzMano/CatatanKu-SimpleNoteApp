@@ -111,7 +111,7 @@ class AddNotesFragment : BaseFragment<FragmentAddNotesBinding>(), View.OnClickLi
             HomeActivity.firestoreDb.collection(userUid)
                 .document(id.toString())
                 .set(notesToFirebase)
-                .addOnSuccessListener {
+                .addOnSuccessListener { result: Any? ->
                     Log.d(TAG, " Firestore success")
                 }.addOnFailureListener {
                     Log.d(TAG, " Firestore error ${it.message}")

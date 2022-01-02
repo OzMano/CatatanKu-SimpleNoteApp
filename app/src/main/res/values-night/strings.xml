@@ -36,6 +36,7 @@
 
     <string name="exit">Exit</string>
     <string name="exit_prompt">Sure to Exit?</string>
+    <string name="note_title">Write your note title here</string>
 
     <array name="mixed_colors">
         <item>@color/blue</item>
