@@ -27,9 +27,9 @@ Made in Kotlin
 </thead>
 <tbody>
 <tr>
-<td> <img src="screenshot/add-note.gif" width="150" ></td>
-<td> <img src="screenshot/edit-note.gif" width="150" ></td>
-<td> <img src="screenshot/delete-note.gif" width="150" ></td>
+<td> <img src="screenshot/add.gif" width="150" ></td>
+<td> <img src="screenshot/edit.gif" width="150" ></td>
+<td> <img src="screenshot/delete.gif" width="150" ></td>
     <td> <img src="screenshot/Screenshot_20220103-012433_CatatanKu.jpg" width="150"</td>
         <td> <img src="app/src/main/res/drawable/Screenshot 2020-02-24 at 2.57.09 PM.png" width="150" ></td>
 
